@@ -1,3 +1,6 @@
-FROM golang:onbuild
+FROM quay.io/prometheus/busybox:latest
 
-ENTRYPOINT ["go-wrapper", "run", "-scrape_uri", "http://apache/server-status?auto"]
+COPY apache_exporter /bin/apache_exporter
+
+ENTRYPOINT ["/bin/apache_exporter"]
+EXPOSE     9117
