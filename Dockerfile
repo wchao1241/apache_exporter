@@ -1,4 +1,4 @@
-FROM quay.io/prometheus/busybox:latest
+FROM golang:1.7.5
 
 COPY apache_exporter /bin/apache_exporter
 
